@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Project } from '@app/core/models/project.model';
+import { TeamService } from '@app/core/services/team.service';
 import { Observable, of } from 'rxjs';
-import { Project } from 'src/app/core/models/project.model';
-import { TeamService } from 'src/app/core/services/team.service';
 
 @Component({
   selector: 'app-projects',

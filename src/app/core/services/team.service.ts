@@ -1,10 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
-import { environment } from 'src/environments/environment';
+
 import { Developer } from '../models/developer.model';
 import { Project } from '../models/project.model';
 import { shuffleTeam } from '../helpers/team.helper';
+import { environment } from 'environments/environment';
 
 @Injectable({
   providedIn: 'root',
