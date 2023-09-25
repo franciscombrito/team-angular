@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Observable, of } from 'rxjs';
-import { Developer } from 'src/app/core/models/developer.model';
+import { Developer } from '../../core/models/developer.model';
 import { TeamService } from 'src/app/core/services/team.service';
 
 @Component({
