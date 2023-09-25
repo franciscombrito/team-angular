@@ -1,4 +1,4 @@
-import { Developer } from '../models/team.model';
+import { Developer } from '../models/developer.model';
 
 //Fisher-Yates algorithm (https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle)
 export function shuffleTeam(team: Developer[]) {
