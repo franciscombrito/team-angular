@@ -5,7 +5,7 @@ import { Observable, map } from 'rxjs';
 import { Developer } from '../models/developer.model';
 import { Project } from '../models/project.model';
 import { shuffleTeam } from '../helpers/team.helper';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
