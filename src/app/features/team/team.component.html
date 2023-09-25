@@ -1,0 +1,35 @@
+<h1 class="text-3xl font-semibold text-center mb-6">Our team</h1>
+<!-- Team Members -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div
+    class="bg-white p-6 rounded-lg shadow-md"
+    *ngFor="let developer of team$ | async"
+  >
+    <img
+      [src]="
+        developer.image
+          ? developer.image
+          : 'assets/no-photo-icon-22-300x300.png'
+      "
+      [alt]="developer.name"
+      class="w-32 h-32 rounded-full mx-auto mb-4"
+    />
+    <h2 class="text-xl font-semibold text-gray-800">{{ developer.name }}</h2>
+
+    <p class="text-gray-600">
+      <strong>Projects: </strong>
+      <ng-container *ngFor="let project of developer.projects; let i = index">
+        <ng-container *ngIf="project.link.length > 0; else noLink">
+          <a target="_blank" class="underline" [href]="project.link">
+            {{ project.name }}</a
+          >
+        </ng-container>
+        <ng-template #noLink>
+          {{ project.name }}
+        </ng-template>
+
+        <span *ngIf="i + 1 < developer.projects.length">,</span>
+      </ng-container>
+    </p>
+  </div>
+</div>

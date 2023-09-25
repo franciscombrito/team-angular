@@ -1,0 +1,27 @@
+<h1 class="text-3xl font-semibold text-center mb-6">Projects</h1>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div
+    class="bg-white p-6 rounded-lg shadow-md"
+    *ngFor="let project of projects$ | async"
+  >
+    <img
+      [src]="
+        project.image ? project.image : 'assets/no-photo-icon-22-300x300.png'
+      "
+      [alt]="project.name"
+      class="w-32 h-32 rounded-full mx-auto mb-4"
+    />
+    <h2 class="text-xl font-semibold text-gray-800">{{ project.name }}</h2>
+    <p class="text-gray-600">
+      <strong>Projects: </strong>
+      <ng-container *ngFor="let tech of project.techStack; let i = index">
+        <span> {{ tech }}</span>
+
+        <span *ngIf="project.techStack && i + 1 < project.techStack.length"
+          >,</span
+        >
+      </ng-container>
+    </p>
+  </div>
+</div>
