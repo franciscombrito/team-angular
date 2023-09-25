@@ -1,6 +1,6 @@
 <h1 class="text-3xl font-semibold text-center mb-6">Projects</h1>
 
-<div class="grid grid-cols-2 lg:grid-cols-3 gap-3">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
   <div
     class="bg-white p-6 rounded-lg shadow-md"
     *ngFor="let project of projects$ | async"
@@ -14,7 +14,7 @@
     />
     <h2 class="text-xl font-semibold text-gray-800">{{ project.name }}</h2>
     <p class="text-gray-600">
-      <strong>Projects: </strong>
+      <strong>Tech Stack: </strong>
       <ng-container *ngFor="let tech of project.techStack; let i = index">
         <span> {{ tech }}</span>
 
