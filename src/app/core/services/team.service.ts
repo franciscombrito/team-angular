@@ -15,15 +15,11 @@ export class TeamService {
 
   getTeam() {
     return this.http
-      .get(`${environment.baseAPI}/team`)
-      .pipe(map((t) => shuffleTeam(t as Developer[]))) as Observable<
-      Developer[]
-    >;
+      .get<Developer[]>(`${environment.baseAPI}/team`)
+      .pipe(map((t) => shuffleTeam(t)));
   }
 
   getProjects() {
-    return this.http.get(`${environment.baseAPI}/projects`) as Observable<
-      Project[]
-    >;
+    return this.http.get<Project[]>(`${environment.baseAPI}/projects`);
   }
 }
